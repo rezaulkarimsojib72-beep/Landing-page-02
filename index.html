@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>প্রোডাক্ট অর্ডার | ম্যানুয়াল পেমেন্ট</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Arial', sans-serif;
+    background:#f4f6f8;
+    color:#222;
+}
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+.hero{
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    color:#fff;
+    padding:40px 20px;
+    border-radius:12px;
+    text-align:center;
+}
+.hero h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+.hero p{
+    font-size:18px;
+}
+.price{
+    background:#fff;
+    margin:20px 0;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+}
+.price h2{
+    color:#e63946;
+    font-size:28px;
+}
+.features{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+.features ul{
+    padding-left:20px;
+}
+.features li{
+    margin-bottom:10px;
+}
+.payment{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+.payment h3{
+    color:#2575fc;
+}
+.payment-box{
+    background:#f1f5ff;
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+}
+.order{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+}
+.order input, .order textarea{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+.order button{
+    width:100%;
+    padding:14px;
+    background:#25d366;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+}
+.order button:hover{
+    background:#1ebe5d;
+}
+.footer{
+    text-align:center;
+    font-size:14px;
+    margin-top:20px;
+    color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="hero">
+        <h1>Intelligent Talking Book</h1>
+        <p>বাচ্চাদের শেখার জন্য সেরা শিক্ষামূলক বই</p>
+    </div>
+
+    <div class="price">
+        <h2>আজকের অফার মূল্য: ৳ ১,২৯০</h2>
+        <p>হোম ডেলিভারি সারা বাংলাদেশে</p>
+    </div>
+
+    <div class="features">
+        <h3>📌 প্রোডাক্ট ফিচার</h3>
+        <ul>
+            <li>✔️ ইংরেজি, বাংলা ও সংখ্যা শেখা</li>
+            <li>✔️ বাচ্চাদের জন্য নিরাপদ</li>
+            <li>✔️ শেখার সাথে মজা</li>
+            <li>✔️ দীর্ঘস্থায়ী ব্যাটারি</li>
+        </ul>
+    </div>
+
+    <div class="payment">
+        <h3>💳 ম্যানুয়াল পেমেন্ট নির্দেশনা</h3>
+
+        <div class="payment-box">
+            <strong>bKash (Personal)</strong><br>
+            নাম্বার: <b>01XXXXXXXXX</b><br>
+            Amount: ৳ ১,২৯০<br>
+            Reference: Your Name
+        </div>
+
+        <div class="payment-box">
+            <strong>Nagad (Personal)</strong><br>
+            নাম্বার: <b>01XXXXXXXXX</b><br>
+            Amount: ৳ ১,২৯০<br>
+            Reference: Order
+        </div>
+
+        <p style="margin-top:10px;color:#d62828;">
+            ⚠️ পেমেন্ট করার পর নিচের ফর্মটি পূরণ করুন
+        </p>
+    </div>
+
+    <div class="order">
+        <h3>📝 অর্ডার ফর্ম</h3>
+
+        <input type="text" id="name" placeholder="আপনার নাম">
+        <input type="text" id="phone" placeholder="মোবাইল নাম্বার">
+        <textarea id="address" placeholder="সম্পূর্ণ ঠিকানা"></textarea>
+        <input type="text" id="trx" placeholder="Transaction ID">
+
+        <button onclick="sendOrder()">WhatsApp এ অর্ডার পাঠান</button>
+    </div>
+
+    <div class="footer">
+        © 2026 Your Brand Name | All Rights Reserved
+    </div>
+
+</div>
+
+<script>
+function sendOrder(){
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+    let trx = document.getElementById("trx").value;
+
+    let message = 
+`নতুন অর্ডার এসেছে:
+নাম: ${name}
+মোবাইল: ${phone}
+ঠিকানা: ${address}
+Transaction ID: ${trx}`;
+
+    let whatsappNumber = "8801XXXXXXXXX";
+    let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
